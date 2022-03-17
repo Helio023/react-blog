@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Combo&display=swap');
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+p {
+  color: $dark;
+}
+
+.link {
+  transition: color 0.3s ease;
+  &:hover {
+    color: $orange;
+  }
+}
+
+.input {
+  border-radius: 0.5rem;
+  outline: 1px solid $gray;
+  border: none;
+  font-size: 1.6rem;
+  font-family: inherit;
+
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+
+  &:focus {
+    border: none;
+    outline: 1px solid rgb(233, 230, 230);
+  }
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}

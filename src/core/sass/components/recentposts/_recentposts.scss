@@ -1,0 +1,215 @@
+.recent__wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba($dark, 0.1);
+  width: 100%;
+  min-height: 100vh;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 8;
+  animation: show 0.2s ease backwards;
+}
+
+.recent {
+  position: relative;
+  background-color: $white;
+  width: 45rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  overflow-y: scroll;
+  height: 100vh;
+  animation: entrance 0.5s ease 0.1s backwards;
+
+  @media (max-width: 32.5em) {
+    width: 40rem;
+  }
+  @media (max-width: 30em) {
+    width: 33rem;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+
+  &__content {
+    border-radius: 0.3rem;
+    border: 1px solid $gray-line-100;
+    margin-top: 2rem;
+    padding: 1rem;
+
+    &-header {
+      padding-left: 2.5rem;
+      position: relative;
+      text-transform: uppercase;
+      border-bottom: 1px solid $gray-line-100;
+      font-size: 1.8rem;
+      padding-bottom: 1rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0.5rem;
+        height: 70%;
+        background-color: $orange;
+      }
+    }
+  }
+
+  &__post {
+    display: flex;
+    padding: 3rem 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $gray-line-100;
+    }
+
+    &-img {
+      width: 7rem;
+      height: 7rem;
+      border-radius: 50% 25% 37% 16%;
+      border: 1px solid $gray-line-100;
+      object-fit: cover;
+    }
+
+    &-text {
+      margin-left: 1.5rem;
+    }
+    &-header {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: normal;
+      color: $dark;
+      position: relative;
+    
+      &::before {
+        content: '';
+        width: 0;
+        height: 3px;
+        position: absolute;
+        background-color: $yellow;
+        left: 0;
+        top: 0;
+        transition: width .3s ease;
+        z-index: 7;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+    }
+    &-comment {
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #bbb;
+
+      span {
+        margin-right: 1.5rem;
+        transform: translateY(0.3rem);
+      }
+    }
+  }
+
+  &__socials-wrapper {
+    @include reset-wrapper;
+
+    .socials {
+      display: flex;
+      align-items: center;
+      margin-top: 2rem;
+
+      &__item {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50% 25% 37% 16%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        transition: background 0.3s ease;
+        &:not(:first-child) {
+          margin-left: 2rem;
+        }
+
+        &:nth-child(1) {
+          background-color: $fb-blue;
+          &:hover {
+            background-color: $orange;
+          }
+        }
+        &:nth-child(2) {
+          background-color: $gh-orange;
+          &:hover {
+            background-color: $orange;
+          }
+        }
+        &:nth-child(3) {
+          background-color: $li-blue;
+          &:hover {
+            background-color: $orange;
+          }
+        }
+      }
+    }
+  }
+
+  &__about-wrapper {
+    @include reset-wrapper;
+
+    .about {
+      &__img {
+        width: 30rem;
+        height: 30rem;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: 1.5rem auto;
+
+        @media (max-width: 30em) {
+          width: 20rem;
+          height: 20rem;
+        }
+      }
+
+      &__description {
+        margin: 2rem 0;
+        font-size: 1.6rem;
+        text-align: center;
+      }
+
+      &__btn {
+        @include button;
+        display: block;
+        text-align: center;
+        width: 50%;
+        margin: 0 auto;
+        @media (max-width: 30em) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.fix {
+  position: sticky;
+  -webkit-sticky: sticky;
+  top: 0;
+}

@@ -1,0 +1,220 @@
+.wrapper {
+  border-top: 1px solid $gray-line-100;
+  border-bottom: 1px solid $gray-line-100;
+  position: relative;
+}
+.navbar {
+  padding: 0 5rem;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  max-width: 128rem;
+  margin: 0 auto;
+
+  @media (max-width: 53.125em) {
+    padding: 0 2rem;
+  }
+
+  &__hamburger {
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+    @media (max-width: 53.125em) {
+      display: flex;
+      &.expand {
+        div:nth-child(1),
+        div:nth-child(2),
+        div:nth-child(3) {
+          width: 4.3rem;
+        }
+      }
+    }
+
+    & div {
+      height: 0.3rem;
+      background-color: $dark;
+      margin-top: 0.5rem;
+      border-radius: 0.5rem;
+      transition: width 0.3s ease;
+    }
+
+    & div:nth-child(1) {
+      width: calc(5rem / 3);
+    }
+    & div:nth-child(2) {
+      width: calc(5rem / 2);
+    }
+    & div:nth-child(3) {
+      width: 4rem;
+    }
+  }
+
+  &__wrapper {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex: 4;
+    z-index: 5;
+    @media (max-width: 53.125em) {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      transform: translateY(54%);
+      display: block;
+      padding: 1rem 2rem;
+      transition: height 0.3s ease;
+      height: 0rem;
+      overflow-y: hidden;
+
+      &.show {
+        min-height: 100vh;
+        background-color: $white;
+        overflow-y: visible;
+      }
+    }
+  }
+
+  &__socials {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    @media (max-width: 53.125em) {
+      display: none;
+    }
+  }
+  &__social {
+    &-item:not(:first-child) {
+      margin-left: 2rem;
+    }
+
+    &-icon {
+      color: $dark;
+      display: inline-block;
+    }
+  }
+
+  //   Menu
+  &__menu {
+    flex: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 53.125em) {
+      display: block;
+    }
+  }
+
+  // Submenu
+  &__submenu {
+    position: absolute;
+    left: 0;
+    width: 300%;
+    top: 4.4rem;
+    background-color: $white;
+    padding: 0 1rem;
+    border-radius: 0.3rem;
+    transition: color 0.5s ease;
+    z-index: 1;
+    border: 1px solid $gray-line-100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease 0.1s;
+
+    @media (max-width: 53.125em) {
+      box-shadow: none;
+      border: none;
+      width: 100%;
+      height: 0rem;
+      overflow-y: hidden;
+      transition: all 0.5s ease;
+      &.expand {
+        height: 22.3rem;
+        overflow-y: visible;
+        transition: all 0.5s ease;
+      }
+    }
+
+    &-link {
+      display: block;
+      color: $dark;
+      padding: 1.5rem 0;
+      &:not(:first-child) {
+        border-top: 1px solid $gray-line-100;
+      }
+
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+
+  &__item:nth-child(2):hover &__submenu {
+    opacity: 1;
+    pointer-events: visible;
+  }
+
+  &__item {
+    position: relative;
+    padding: 1rem 0;
+    &:not(:first-child) {
+      margin-left: 2rem;
+
+      @media (max-width: 53.125em) {
+        margin-left: 0;
+        border-top: 1px solid $gray-line-100;
+      }
+    }
+    &:nth-child(3) {
+      @media (max-width: 53.125em) {
+        border-bottom: 1px solid $gray-line-100;
+        // transition: all 0.3s ease;
+
+        &.expand {
+          padding-top: 22.3rem;
+        }
+      }
+    }
+  }
+  &__link {
+    color: $dark;
+
+    &-icon {
+      display: none;
+      transform: rotate(-90deg);
+
+      @media (max-width: 53.125em) {
+        display: block;
+      }
+    }
+
+    @media (max-width: 53.125em) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  // Buttons
+  &__btns {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &-icon {
+      cursor: pointer;
+    }
+    &-icon:not(:first-child) {
+      margin-left: 2rem;
+    }
+  }
+}
+
+.active {
+  color: $orange;
+}

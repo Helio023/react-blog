@@ -1,0 +1,111 @@
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+.slider {
+  &__item {
+    display: flex;
+    height: 50rem;
+    width: 100%;
+    align-items: center;
+    z-index: 4;
+
+    @media (max-width: 55.625em) {
+      transform: translateX(0);
+      height: 40rem;
+    }
+    @media (max-width: 34.375em) {
+      flex-direction: column;
+      height: 45rem;
+    }
+
+    &-container {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    flex: 1;
+    @media (max-width: 34.375em) {
+      width: 100%;
+      height: 40%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__post {
+    flex: 1;
+    background-color: $blue-gray;
+    height: 80%;
+    z-index: 1;
+    transform: translateX(-10%);
+    padding: 5rem 3rem;
+
+    @media (max-width: 55.625em) {
+      transform: translateX(0);
+      height: 100%;
+    }
+
+    @media (max-width: 34.375em) {
+      width: 100%;
+      height: 60%;
+      padding: 2rem 3rem;
+    }
+  }
+  .post {
+    &__category {
+      @include category;
+    }
+
+    &__title {
+      margin-top: 2rem;
+      @include app-title;
+    }
+
+    &__date {
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+      color: #bbb;
+      margin-top: 2rem;
+      p {
+        margin-left: 1rem;
+        text-transform: capitalize;
+      }
+    }
+
+    &__link {
+      margin-top: 3rem;
+      font-size: 1.4rem;
+      color: $dark;
+      display: flex;
+      width: max-content;
+      align-items: center;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+
+      &::before {
+        content: '';
+        width: 2.8rem;
+        height: 0.2rem;
+        margin-right: 0.3rem;
+        background-color: $dark;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        color: $orange;
+      }
+
+      &:hover::before {
+        width: 3.5rem;
+        background-color: $orange;
+      }
+    }
+  }
+}

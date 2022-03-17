@@ -1,0 +1,16 @@
+@import './utils/variables';
+@import './base/reset';
+@import './utils/mixins';
+@import './components/logo';
+@import './layout/navbar';
+@import './components/searchInput';
+@import './components/recentposts/recentposts';
+@import './utils/animations';
+@import './components/loaders';
+@import './layout/app-layout';
+@import './components/slider';
+@import './components/homeposts/homeposts';
+@import './components/relatedposts';
+@import './components/pagination';
+@import './pages/not-found' ;
+@import './components/footer';

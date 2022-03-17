@@ -1,0 +1,51 @@
+@mixin reset-wrapper {
+  margin-top: 5rem;
+  border: 1px solid $gray-line-100;
+  padding: 1rem;
+}
+
+@mixin button {
+  border: none;
+  outline: 2px solid $orange;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: $dark;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  padding: 1.5rem 3rem;
+  border-radius: 3rem;
+
+  &:hover {
+    color: $white;
+    background-color: $orange;
+  }
+}
+
+@mixin app-title {
+  font-family: 'Combo', cursive;
+  font-size: 3.6rem;
+  color: $dark;
+  @media (max-width: 55.625em) {
+    font-size: 2.6rem;
+  }
+}
+
+@mixin category {
+  font-size: 1.6rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid $orange;
+  display: inline-block;
+  text-transform: capitalize;
+  &:not(:first-child) {
+    margin-left: 1.5rem;
+  }
+  &:nth-child(2) {
+    border-bottom: 2px solid green;
+  }
+
+  @media (max-width: 34.375em) {
+    font-size: 1.2rem;
+  }
+}

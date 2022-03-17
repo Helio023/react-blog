@@ -1,0 +1,81 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  padding-top: 3rem;
+  border-top: 1px solid $gray-line-100;
+  margin-top: 3rem;
+
+  &__page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    background-color: $orange;
+    color: $white;
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &.active {
+      background-color: $dark;
+    }
+    &:hover {
+      background-color: $dark;
+    }
+  }
+
+  &__prev,
+  &__next {
+    font-size: 1.6rem;
+    cursor: pointer;
+    align-items: center;
+    display: none;
+    transition: width 0.3s ease;
+    color: $dark;
+    &:hover {
+      color: $orange;
+    }
+  }
+  &__prev {
+    &.active {
+      display: flex;
+    }
+    &::before {
+      content: '';
+      width: 2rem;
+      height: 2px;
+      background-color: $dark;
+      margin-right: 0.5rem;
+      transition: width 0.3s ease;
+    }
+    &:hover::before {
+      transition: width 0.3s ease;
+      background-color: $orange;
+      width: 3rem;
+    }
+  }
+
+  &__next {
+    margin-left: 1rem;
+    &.active {
+      display: flex;
+    }
+
+    &::after {
+      content: '';
+      width: 2rem;
+      height: 2px;
+      background-color: $dark;
+      margin-left: 0.5rem;
+      transition: width 0.3s ease;
+    }
+    &:hover::after {
+      background-color: $orange;
+      width: 3rem;
+    }
+  }
+}
+
+

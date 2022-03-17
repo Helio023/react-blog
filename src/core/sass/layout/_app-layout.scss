@@ -1,0 +1,9 @@
+.app-layout {
+  max-width: 128rem;
+  margin: 0 auto;
+  padding: 5rem;
+
+  @media (max-width: 53.125em) {
+    padding: 3rem;
+  }
+}

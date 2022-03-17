@@ -1,0 +1,59 @@
+.related-posts-container {
+  border: 1px solid $gray-line-100;
+  border-radius: 5px;
+  padding: 2rem;
+  margin-top: 5rem;
+}
+
+.related-posts {
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-row-gap: 3rem;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+
+  &__title {
+    font-size: 2.6rem;
+    font-weight: normal;
+    border-bottom: 1px solid $gray-line-100;
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+    text-transform: capitalize;
+  }
+
+  & .post {
+    display: flex;
+    gap: 1rem;
+
+    &__img {
+
+      img {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 7rem;
+        object-fit: cover;
+      }
+    }
+
+    &__text {
+      margin-left: 2rem;
+
+    }
+
+    &__title {
+      font-size: 1.6rem;
+      font-weight: normal;
+      
+    }
+
+    &__date {
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      span {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
